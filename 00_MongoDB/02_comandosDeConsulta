@@ -1,0 +1,22 @@
+//primeira busca por todos os registros
+db.billingcycles.find()
+
+db.billingcycles.find().pretty()
+
+//primeiro registro
+    db.billingcycles.findOne()
+
+//fitros
+db.billingcycles.findOne({month:2})
+
+//usanto setença de ou
+db.billingcycles.find({$or :[{month: 1 }, {month:2}]}).pretty()
+
+//retorna aqueles que tem um certo atributo
+db.billingcycles.find({credits:{$exists:true}}).pretty()
+
+//fazendo uma consulta mas a partir de um determinado registro
+db.billingcycles.find().skip(1).pretty()
+
+//limitando o retorno das consultas
+db.billingcycles.find().skip(1).limit(1).pretty()

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fundamento de angular </title>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script>
+         angular.module('app',[])
+        //  criando o filtro de nome upper
+         angular.module('app').filter('upper', function(){
+            return function(input){
+                 return input.toUpperCase()
+             }
+         })
+
+         angular.module('app').controller('MeuController', [
+             
+             function(){
+                 const self = this
+                 self.value = "texto";
+                 
+             }
+         ])
+    </script>
+</head>
+<body>
+   <div ng-controller="MeuController as ctrl">  
+       <!-- Chamndo o filtro -->
+       <h1>{{ctrl.value | upper}}</h1>
+       <input ng-model="ctrl.value">
+       
+   </div>
+</body>
+</html>

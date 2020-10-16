@@ -1,0 +1,8 @@
+// atulizando  registros
+db.billingcycles.update(
+{$and:[{month: 1},{year:2017}]},
+{$set:{credits:[{name:"Salário",value:5000}]}}
+)
+
+// trazendo apenas o nome no find, id vem por padrao o 0 faz que qle nao venha
+db.billingcycles.find({credits:{$exists:true}}, {_id:0, name: 1}).pretty()

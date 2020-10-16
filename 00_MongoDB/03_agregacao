@@ -1,0 +1,12 @@
+//agragação
+
+/*
+    project
+        é um operador de agregação
+        passa o documento com os campos espefificados para o proximo passo do agregate
+*/
+    db.billingcycles.aggregate([{
+$project:{credit:{$sum: "$credits.value"},debt:{$sum: "$debts.value"}}
+},{
+$group:{_id:null,credit:{$sum: "$credit"},debt:{$sum: "$debt"}}
+}])

@@ -1,0 +1,10 @@
+//fazendo a contagem de registros
+db.billingcycles.count()
+
+//removendo dados da collection
+db.billingcycles.remove({month: 2})
+
+//remover paena uma
+db.billingcycles.remove({year: 2017}, 1)
+
+// dropa a base
